@@ -19,12 +19,14 @@ class StartPage extends StatelessWidget{
                 ),
                 ),
               SizedBox(height: 40,),
-              OutlinedButton(
+              OutlinedButton.icon(
                 style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.white,
                   
                 ),
-                onPressed: () {}, child: Text(
+                onPressed: () {}, 
+                icon: Icon(Icons.arrow_right_outlined),
+                label: Text(
                   'Start Quiz',
               ),
               ),
