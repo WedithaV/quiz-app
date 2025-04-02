@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StartPage extends StatelessWidget{
-  const StartPage({super.key});
+  const StartPage(this.startPage,{super.key});
+  final void Function() startPage;
+
   @override
   Widget build(context){
     return Center(
@@ -26,7 +28,7 @@ class StartPage extends StatelessWidget{
                   foregroundColor: Colors.white,
                   
                 ),
-                onPressed: () {}, 
+                onPressed: startPage, 
                 icon: Icon(Icons.arrow_right_outlined),
                 label: Text(
                   'Start Quiz',
