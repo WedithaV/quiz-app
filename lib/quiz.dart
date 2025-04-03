@@ -11,7 +11,13 @@ class Quiz extends StatefulWidget{
 }
 
 class _QuizState extends State<Quiz>{
-  Widget activeScreen = StartPage(switchScreen);
+  Widget? activeScreen ;
+
+  @override
+  void initState() {
+    activeScreen = StartPage(switchScreen);
+    super.initState();
+  }
 
   void switchScreen(){
     setState(() {
