@@ -25,14 +25,12 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
             color: Colors.white,
           ),),
           SizedBox(height: 30,),
-          AnswerButton(answerText: currentQuestion.answers[0], onTap: (){}),
-          SizedBox(height: 20,),
-          AnswerButton(answerText: currentQuestion.answers[1], onTap: (){}),
-          SizedBox(height: 20,),
-          AnswerButton(answerText: currentQuestion.answers[2], onTap: (){}),
-          SizedBox(height: 20,),
-          AnswerButton(answerText: currentQuestion.answers[3], onTap: (){}),
-          
+
+          ...currentQuestion.answers.map((answer) { //... spread operator. converted widgets are in the list . so it is not acceptable by child widget . there for we have to get that widgets individually
+            return AnswerButton(answerText: answer, onTap: () {});
+          }),
+
+        
         ],
       ),
     );
