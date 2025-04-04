@@ -17,21 +17,26 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
   Widget build(context){
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(currentQuestion.text,
-          style: TextStyle(
-            color: Colors.white,
-          ),),
-          SizedBox(height: 30,),
-
-          ...currentQuestion.answers.map((answer) { //... spread operator. converted widgets are in the list . so it is not acceptable by child widget . there for we have to get that widgets individually
-            return AnswerButton(answerText: answer, onTap: () {});
-          }),
-
+      child: Container(
+        margin: EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(currentQuestion.text,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 30,),
         
-        ],
+            ...currentQuestion.answers.map((answer) { //... spread operator. converted widgets are in the list . so it is not acceptable by child widget . there for we have to get that widgets individually
+              return AnswerButton(answerText: answer, onTap: () {});
+            }),
+        
+          ],
+        ),
       ),
     );
   }
